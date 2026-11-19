@@ -5,5 +5,4 @@ qemu-system-x86_64 \
     -kernel kernels/vmlinuz \
     -initrd initramfs/initramfs.cpio.gz \
     -append "console=ttyS0 rdinit=/init" \
-    -nographic \
-    -no-reboot
+    -nographic 
