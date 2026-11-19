@@ -19,6 +19,10 @@ Linux kernel (from 2.6 onwards) contains a gzipped `cpio` format archive which i
 `/dev/console` is a special dispositive that represents the console of the system.
 In order to work properly, there should be a place where inputs and outputs should be happening.
 Imagine a case that something is wrong, a console should be able to print it out.
+If this fails there are some workarounds to this.
+- Can try to continue the boot if isn't a problem, just log what happen into throught writting onto `/dev/kmsg` or `/dev/log` and use `/dev/null` to the rest of the work.
+- If this also fails, you can consider to trigger a kernel panic. 
+
 
 # Reference
 - https://www.kernel.org/doc/html/latest/filesystems/ramfs-rootfs-initramfs.html
