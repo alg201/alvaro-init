@@ -16,7 +16,9 @@ Rootfs is an special instance of ramfs that is always present on linux systems. 
 Linux kernel (from 2.6 onwards) contains a gzipped `cpio` format archive which is extracted into rootfs when the kernel boots up. After that, the kernel checks to see if rootfs contains a file `init` on it. If so, it executes it as PID 1. And this is responsible to make the whole system to start properly. This includes locating and mounting the real root partition.
 
 ## Why we need the /dev/console at the beggining?
+`/dev/console` is a special dispositive that represents the console of the system.
 In order to work properly, there should be a place where inputs and outputs should be happening.
+Imagine a case that something is wrong, a console should be able to print it out.
 
 # Reference
 - https://www.kernel.org/doc/html/latest/filesystems/ramfs-rootfs-initramfs.html
