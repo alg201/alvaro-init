@@ -9,9 +9,9 @@ enum fds_errors open_fds(){
         status |= CONSOLE_COULD_NOT_BE_OPEN;
     }
 
-    __fds[KMSG] = open("/dev/kmsg", O_WRONLY); //should this considered to be a reason to crash?
+    __fds[KMSG] = open("/dev/kmsg", O_WRONLY);
     if(__fds[KMSG] == -1){
-        status |= CONSOLE_COULD_NOT_BE_OPEN;
+        status |= KMSG_COULD_NOT_BE_OPEN;
     }
 
     __fds[NULL_FD] = open("/dev/null", O_WRONLY);
@@ -22,3 +22,7 @@ enum fds_errors open_fds(){
     return status;
 }
 
+int log_message(const char* data){
+
+    return 0;
+}

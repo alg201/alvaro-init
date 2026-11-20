@@ -19,7 +19,11 @@ int main(int argc, char** argv){
         char operation[32] = {0};
         printf("> ");
         int readbytes = scanf("%31s", operation);
-        if (readbytes == -1){
+        if(readbytes == EOF){
+            printf("scan died\n");
+            return INVALID_STATUS;
+        }
+        if (readbytes != 1){
             printf("what?\n");
             continue;
         }
